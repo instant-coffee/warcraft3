@@ -9,9 +9,14 @@ class Footman < Unit
     @attack_power = 10
   end
   
-  # def attack!(enemy)
-  #   enemy.damage(@attack_power)
-  # end
+
+  def attack!(enemy)
+    attack_power = @attack_power
+    if enemy.is_a?(Barracks)
+    attack_power = (attack_power/2)
+  end
+  enemy.damage(attack_power)
+end
 
 
 

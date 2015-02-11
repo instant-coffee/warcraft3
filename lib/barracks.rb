@@ -3,12 +3,18 @@ require 'pry'
 
 class Barracks
 
-attr_accessor :gold, :food
+attr_accessor :gold, :food, :lumber, :health_points
 
   def initialize
    @gold = 1000
    @food = 80
+   @lumber = 500
+   @health_points = 500
   end
+  def damage(attack_power)
+    @health_points -= attack_power
+  end
+
 
   def can_train_footman?
     if (food > 1)&&(gold > 134)
